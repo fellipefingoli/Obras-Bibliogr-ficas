@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Pre requiriments
 
-Things you may want to cover:
+* Ruby 2.5.8
+* Node 12.18+
+* SQLite3
 
-* Ruby version
+## Installment steps
 
-* System dependencies
+If using Ruby version without `bundler` run:
 
-* Configuration
+```gem install bundler```
 
-* Database creation
+after installing bundle run:
 
-* Database initialization
+```bundle install```
 
-* How to run the test suite
+create database with:
 
-* Services (job queues, cache servers, search engines, etc.)
+```rails db:create```
 
-* Deployment instructions
+and after that:
 
-* ...
+```rails db:migrate```
+
+then finally run:
+
+```rails s```
