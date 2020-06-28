@@ -7,9 +7,12 @@ class AuthorsController < ApplicationController
     params[:authors].map do |author|
       @authors << Author.create!(parse_author_name(author[:name]))
     end
-    
-    render status: 200, json: @authors
-
+  
+    render status: :created, json: @authors
+  rescue ActiveRecord::RecordInvalid => e
+    render status: :unprocessable_entity, json: e.record.errors
+  rescue StandardError => e
+    render status: :internal_server_error, json: "Cound't create authors"
   end
 
   private
