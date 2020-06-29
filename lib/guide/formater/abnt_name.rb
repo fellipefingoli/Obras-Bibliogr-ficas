@@ -2,8 +2,8 @@ module Guide
   module Formater
     class AbntName
       class << self
-        RGX = /(filho|filha|neto|neta|sobrinho|sobrinha|junior)/
-        RGX2 = /(da|de|do|das|dos)/
+        RGX = /^(filho|filha|neto|neta|sobrinho|sobrinha|junior)$/
+        RGX2 = /^(da|de|do|das|dos)$/
 
         def call(*args)
           name = args.join(" ")

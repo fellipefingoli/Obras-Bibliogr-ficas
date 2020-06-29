@@ -10,6 +10,7 @@ RSpec.describe Guide::Formater::AbntName, type: :lib do
     let(:name5) { 'José' }
     let(:name6) { 'José Filho da Silva' }
     let(:name7) { 'Maria das Dores Neta' }
+    let(:name8) { 'Machado de Assis' }
 
     it { expect(described_class.(name1)).to eq('SILVA, José') }
 
@@ -24,5 +25,7 @@ RSpec.describe Guide::Formater::AbntName, type: :lib do
     it { expect(described_class.(name6)).to eq('SILVA, José Filho da') }
 
     it { expect(described_class.(name7)).to eq('DORES NETA, Maria das') }
+
+    it { expect(described_class.(name8)).to eq('ASSIS, Machado de') }
   end
 end
